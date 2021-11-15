@@ -18,11 +18,12 @@
         // draw map border
         ctx.lineWidth = 1;
         ctx.strokeRect(0, 0, 250, 250);
-        drawCursor();
+        drawCursor(x, y);
 	});
 
     function drawCursor(currentX, currentY) {
         if (ctx) {
+            console.log(ctx);
             ctx.fillRect(currentX * mapRatio, currentY * mapRatio, unit * mapRatio, unit * mapRatio);
         }
     }
