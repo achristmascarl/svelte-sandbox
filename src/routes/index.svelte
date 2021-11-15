@@ -32,7 +32,6 @@
 
   function drawCursor(currentX, currentY) {
     if (ctx) {
-      console.log(ctx);
       ctx.fillRect(currentX * mapRatio, currentY * mapRatio, unit * mapRatio, unit * mapRatio);
     }
   }
