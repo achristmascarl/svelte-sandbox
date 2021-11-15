@@ -41,34 +41,38 @@
   function handleKeydown(event) {
     const keyCode = event.keyCode;
 
-    if (keyCode == 65 || keyCode == 37) { // left or a
-        event.preventDefault();
-        if (x - unit >= 0) {
-            x -= unit;
-        } else if (x - unit < 0) {
-            x = 0;
-        }
+    if (keyCode == 65 || keyCode == 37) {
+      // left or a
+      event.preventDefault();
+      if (x - unit >= 0) {
+        x -= unit;
+      } else if (x - unit < 0) {
+        x = 0;
+      }
     }
-    
-    if (keyCode == 68 || keyCode == 39) { // right or d
-        event.preventDefault();
-        if (x + unit <= unit * ratio) {
-            x += unit;
-        } else if (x + unit > unit * ratio) {
-            x = unit * ratio;
-        }
+
+    if (keyCode == 68 || keyCode == 39) {
+      // right or d
+      event.preventDefault();
+      if (x + unit <= unit * ratio) {
+        x += unit;
+      } else if (x + unit > unit * ratio) {
+        x = unit * ratio;
+      }
     }
-    
-    if (keyCode == 87 || keyCode == 38) { // up or w
-        event.preventDefault();
-        if (y - unit >= 0) {
-            y -= unit;
-        } else if (y - unit < 0) {
-            y = 0;
-        }
-    } 
-    
-    if (keyCode == 83 || keyCode == 40) { // down or s
+
+    if (keyCode == 87 || keyCode == 38) {
+      // up or w
+      event.preventDefault();
+      if (y - unit >= 0) {
+        y -= unit;
+      } else if (y - unit < 0) {
+        y = 0;
+      }
+    }
+
+    if (keyCode == 83 || keyCode == 40) {
+      // down or s
       event.preventDefault();
       if (y + unit <= unit * ratio) {
         y += unit;
@@ -79,18 +83,9 @@
   }
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
+<svelte:window on:keydown={handleKeydown} />
 
 <h1>Welcome to Svelte Sandbox</h1>
 <p>use arrow keys or wasd to move the cursor around</p>
-<canvas
-  bind:this={canvas}
-  width={250}
-  height={250}
-    class='ml-1'
-></canvas>
-<button
-  on:click={shakeCanvas}
->
-  Shake
-</button>
+<canvas bind:this={canvas} width={250} height={250} class="ml-1" />
+<button on:click={shakeCanvas}> Shake </button>
